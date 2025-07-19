@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Executed first and in top priority -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <!-- This line only valid of mobile devices-->
+    <!-- This meta tag name is viewport, application width will be equal to device width, if not added then defualt one will be used, Initial-scale is zoom-level, 1.0 is 100% -->
+    <!-- The above line was added to support other devices other then desktop -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Relating stylesheet with html page -->
+    <!-- <script src="script.js" defer></script> -->
+    <!-- script.js will be downloaded but will be executed later when full document is parsed, without this script will be executed as soon it will be downloaded-->
+
+    <script src="script.js" async></script>
+    <!-- It will start downloading, but as soon as it's downloaded js will be executed -->
+
+    <!-- both async and defer download happend parallel, but in async execution starts after the downloading, but in defer script is executed after whole html is parsed -->
+
+    <!-- If we need to do html manupulation we should defer -->
+    <!-- Async is used when we are not using html manupulation and it saved time as downloading is done parallely -->
+    <!-- By default script tag is blocking -->
+    <title>My Web Page</title>
+</head>
+<body>
+    <div id="tag">
+        Hello, world from html
+    </div>
+</body>
+</html>         
