@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('frontend'));
 
 const PORT = 8080; // Default port for http protocol
 // for https 443 is default
