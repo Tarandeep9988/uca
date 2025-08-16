@@ -18,7 +18,7 @@ public class Main {
         assert llQueue.isEmpty();
         assert llQueue.remove() == -1; // removing from empty queue
 
-        // Test Array Queue
+        // Testing Array Queue
         ArrayQueue arrQueue = new ArrayQueue(3);
         assert arrQueue.isEmpty();
         arrQueue.add(100);
