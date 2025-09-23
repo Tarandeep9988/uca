@@ -60,4 +60,3 @@ renderProducts();
 
 // setTimeout(renderProducts, 2000);
 
-

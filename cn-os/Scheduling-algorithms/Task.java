@@ -43,7 +43,7 @@ public class Task implements Runnable {
                 // Wait until scheduler resumes this task
                 synchronized (lock) {
                     while (isPaused) {
-                        lock.wait();
+                        lock.wait(); //
                     }
                 }
 
@@ -86,10 +86,3 @@ public class Task implements Runnable {
                 taskId, arrivalTime, burstTime, priority, completionTime, waitingTime, turnaroundTime);
     }
 }
-
-
-
-
-
-
-

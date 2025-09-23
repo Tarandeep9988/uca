@@ -22,17 +22,20 @@ public class Main {
                 }
             }
         });
+        System.out.println("This program will print natural numbers every second");
+        System.out.println("Commands: start, stop, exit");
+
         logger.start();
 
         // Main thread takes input
         Scanner sc = new Scanner(System.in);
         while (true) {
             String cmd = sc.nextLine();
-            if (cmd.equalsIgnoreCase("pause")) paused = true;
-            else if (cmd.equalsIgnoreCase("resume")) paused = false;
+            if (cmd.equalsIgnoreCase("stop")) paused = true;
+            else if (cmd.equalsIgnoreCase("start")) paused = false;
             else if (cmd.equalsIgnoreCase("exit")) break;
         }
-
+        sc.close();
         exit = true;
         System.out.println("Stopped logging.");
     }
