@@ -3,11 +3,13 @@ public class SearchMatrix {
     /**
      * Search a 2D matrix.
      * 
-     * You are given an m x n integer matrix matrix with the following two properties:
+     * You are given an m x n integer matrix matrix with the following two
+     * properties:
      * 1. Each row is sorted in non-decreasing order.
      * 2. Each column is sorted in non-decreasing order.
      * 
-     * Given an integer target, return true if target is in matrix or false otherwise.
+     * Given an integer target, return true if target is in matrix or false
+     * otherwise.
      * 
      * Constraints:
      * 1. m == matrix.length
@@ -22,6 +24,7 @@ public class SearchMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {
         return helper(matrix, target, 0, matrix[0].length - 1);
     }
+
     private boolean helper(int[][] matrix, int target, int row, int col) {
         if (row == matrix.length || col < 0) {
             return false; // Reached bottom right but nothing found
@@ -36,24 +39,25 @@ public class SearchMatrix {
         // Target must be greater then the current element -> skip this entire row
         return helper(matrix, target, row + 1, col);
     }
+
     /**
      * Main method for testing the SearchMatrix class.
      */
     public static void main(String[] args) {
         SearchMatrix sm = new SearchMatrix();
-        
+
         int[][] matrix1 = {
-            {1, 4, 7, 11, 15},
-            {2, 5, 8, 12, 19},
-            {3, 6, 9, 16, 22},
-            {10, 13, 14, 17, 24},
-            {18, 21, 23, 26, 30}
+                { 1, 4, 7, 11, 15 },
+                { 2, 5, 8, 12, 19 },
+                { 3, 6, 9, 16, 22 },
+                { 10, 13, 14, 17, 24 },
+                { 18, 21, 23, 26, 30 }
         };
         assert sm.searchMatrix(matrix1, 5) == true : "Test case 1 failed";
         assert sm.searchMatrix(matrix1, 20) == false : "Test case 2 failed";
 
         int[][] matrix2 = {
-            {-1, 3}
+                { -1, 3 }
         };
         assert sm.searchMatrix(matrix2, 3) == true : "Test case 3 failed";
         assert sm.searchMatrix(matrix2, -1) == true : "Test case 4 failed";

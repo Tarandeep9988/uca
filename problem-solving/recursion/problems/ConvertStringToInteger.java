@@ -1,3 +1,4 @@
+
 public class ConvertStringToInteger {
     /**
      * Convert a string to an integer without using built-in parsing functions.
@@ -20,7 +21,32 @@ public class ConvertStringToInteger {
      * @returns int - The integer value represented by the string.
      */
     public int convertStringToInteger(String s) {
+      try {
+        boolean isNegative = s.charAt(0) == '-';
+        if (isNegative) {
+          s = s.substring(1);
+        }
+        long val = helper(s, s.length() - 1);
+        return (int) (isNegative ? val * -1 : val);
+      } catch (Exception e) {
         return 0;
+      }
+    }
+    private long helper(String s, int i) throws Exception{
+      if (i < 0) {
+        return 0;
+      }
+      char ch = s.charAt(i);
+      if (!Character.isDigit(ch)) {
+        throw new Exception();
+      }
+      try {
+        int digit = ch - '0';
+        long nextNum = 10 * helper(s, i - 1);
+          return digit + nextNum;
+      } catch (Exception e) {
+        throw new Exception();
+      }
     }
 
     /**
