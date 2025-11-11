@@ -4,3 +4,6 @@
 # Ignore Vim swap files
 *.swp
 *.swo
+
+web-dev/web_technologies
+
